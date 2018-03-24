@@ -14,7 +14,7 @@ class Helper
 {
     public static function redirect($relativePath)
     {
-        header('Location: ' .  Config::baseUrl() . $relativePath);
+        header('Location: ' .  Config::getBaseUrl() . $relativePath);
     }
 
     public static function authenticate()
@@ -29,16 +29,11 @@ class Helper
     public static function connectToDB()
     {
         if (getenv("CLEARDB_DATABASE_URL")) {
-            echo "CLEAR DB!";
             $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
             $server = $url["host"];
-            echo $server . PHP_EOL;
             $username = $url["user"];
-            echo $username . PHP_EOL;
             $password = $url["pass"];
-            echo $password . PHP_EOL;
             $db = substr($url["path"], 1);
-            echo $db . PHP_EOL;
         } else {
             $server = "localhost";
             $username = "root";

@@ -10,7 +10,7 @@ namespace ThriveLifeCommentsPage;
 
 class Config
 {
-    public static function baseUrl() {
+    public static function getBaseUrl() {
         $herokuUrl = getenv("HEROKU_URL");
 
         if ($herokuUrl)
