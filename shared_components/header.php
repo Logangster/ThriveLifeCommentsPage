@@ -7,7 +7,12 @@
         crossorigin="anonymous"></script>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/">Comments Page</a>
+        <?php if (isset($_SESSION['username'])) {
+            $homeUrl = "/comments";
+        } else {
+            $homeUrl = "/";
+        } ?>
+        <a class="navbar-brand" href="<?php echo $homeUrl; ?>">Comments Page</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,20 +26,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/registration">Register</a>
                     </li>
-                <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/comments">Product Comments</a>
-                    </li>
                 <?php endif; ?>
             </ul>
             <?php if (isset($_SESSION['username'])): ?>
                 <p style="color: white; text-align: center;"><?php echo $_SESSION['username'] ?></p>&nbsp;&nbsp;
                 <form action="/logout">
-                    <input class="btn btn-success" type="submit" value="Logout" />
+                    <input class="btn btn-success" type="submit" value="Logout"/>
                 </form>
             <?php else: ?>
                 <form action="/login">
-                    <input class="btn btn-success" type="submit" value="Login" />
+                    <input class="btn btn-success" type="submit" value="Login"/>
                 </form>
             <?php endif; ?>
         </div>
