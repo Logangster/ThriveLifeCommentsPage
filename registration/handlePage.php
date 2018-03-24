@@ -5,13 +5,15 @@
  * Date: 3/24/2018
  * Time: 11:06 AM
  */
-require_once "../autoload.php";
+namespace ThriveLifeCommentsPage;
 
-use \Models\User;
+require_once "../models/User.php";
+
+use ThriveLifeCommentsPage\Models\User;
 
 //Variables that may be used by the view
 $errors = [];
-$token = \Helper::setCSRFToken();
+$token = Helper::setCSRFToken();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
     $username = $_POST['username'];
@@ -31,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
         $user = new User($username, $password);
         if ($user->save()) {
             $_SESSION['username'] = $user->username;
-           // Helper::redirect("/comments");
+            Helper::redirect("/comments");
         }
     }
 }

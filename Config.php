@@ -6,6 +6,8 @@
  * Time: 1:05 PM
  */
 
+namespace ThriveLifeCommentsPage;
+
 class Config
 {
     public static $baseUrl = 'http://localhost/thrivelifecommentspage';

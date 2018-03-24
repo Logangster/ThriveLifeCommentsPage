@@ -6,7 +6,11 @@
  * Time: 11:37 AM
  */
 
-namespace models;
+namespace ThriveLifeCommentsPage\Models;
+
+require_once "../Helper.php";
+
+use ThriveLifeCommentsPage\Helper;
 
 class User
 {
@@ -16,7 +20,7 @@ class User
 
     public function __construct($username, $password)
     {
-        $this->conn = \Helper::connectToDB();
+        $this->conn = Helper::connectToDB();
         $this->username = $username;
         $this->password = $password;
     }
@@ -28,7 +32,7 @@ class User
 
     public function save()
     {
-        $this->password = \Helper::hashPassword($this->password);
+        $this->password = Helper::hashPassword($this->password);
         if ($stmt = $this->conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)")) {
             $stmt->bind_param('ss', $this->username, $this->password);
             $stmt->execute();
@@ -43,7 +47,7 @@ class User
     {
         $colUsername = "";
         $colPassword = "";
-        $conn = \Helper::connectToDB();
+        $conn = Helper::connectToDB();
 
         if ($stmt = $conn->prepare("SELECT username, password FROM users WHERE username = ?")) {
             $stmt->bind_param('s', $username);

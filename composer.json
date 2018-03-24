@@ -6,5 +6,9 @@
             "email": "rockstar171@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+        }
+    },
     "require": {}
 }

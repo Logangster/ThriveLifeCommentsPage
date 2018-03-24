@@ -5,14 +5,16 @@
  * Date: 3/24/2018
  * Time: 11:06 AM
  */
+namespace ThriveLifeCommentsPage;
 
-require_once "../autoload.php";
+require_once "../Helper.php";
+require_once "../models/User.php";
 
-use \Models\User;
+use ThriveLifeCommentsPage\Models\User;
 
 //Variables that may be used by the view
 $errors = [];
-$token = \Helper::setCSRFToken();
+$token = Helper::setCSRFToken();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
     $username = $_POST['username'];
@@ -36,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
                 $errors = ["Invalid username or password"];
             } else {
                 $_SESSION['username'] = $user->username;
-                \Helper::redirect("/comments");
+                Helper::redirect("/comments");
             }
         }
     }

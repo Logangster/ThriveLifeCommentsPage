@@ -6,6 +6,10 @@
  * Time: 12:29 PM
  */
 
+namespace ThriveLifeCommentsPage;
+
+require_once "Config.php";
+
 class Helper
 {
     public static function redirect($relativePath)

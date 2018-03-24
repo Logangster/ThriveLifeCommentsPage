@@ -1,5 +1,7 @@
 <?php
 
-require_once "../autoload.php";
+namespace ThriveLifeCommentsPage;
+
+require_once "../Helper.php";
 
 Helper::authenticate();
