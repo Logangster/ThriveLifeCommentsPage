@@ -1,11 +1,11 @@
 <?php
 
 if (isset($_SESSION['flash'])) {
-    
+
     echo <<<alert
     
     <div class="alert alert-info">
-       <p>$flash</p>
+       <p>{$_SESSION['flash']}</p>
     </div>
 
 alert;
