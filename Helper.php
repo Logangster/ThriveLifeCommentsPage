@@ -31,9 +31,13 @@ class Helper
             echo "CLEAR DB!";
             $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
             $server = $url["host"];
+            echo $server;
             $username = $url["user"];
+            echo $username;
             $password = $url["pass"];
+            echo $url;
             $db = substr($url["path"], 1);
+            echo $db;
         } else {
             $server = "localhost";
             $username = "root";
