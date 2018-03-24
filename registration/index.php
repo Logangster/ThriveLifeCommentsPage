@@ -14,7 +14,7 @@
 <body>
 <?php include "../shared_components/header.php" ?>
 <main>
-    <?php require_once '../autoloader.php' ?>
+    <?php require_once '../autoload.php' ?>
     <?php require "./handlePage.php" ?>
 
 

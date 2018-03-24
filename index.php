@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php require_once './autoloader.php' ?>
+<?php require_once './autoload.php' ?>
 <?php include "./shared_components/header.php" ?>
 
 <main>

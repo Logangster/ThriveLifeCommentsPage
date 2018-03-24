@@ -6,8 +6,9 @@
  * Time: 11:06 AM
  */
 
+require_once "../autoload.php";
+
 use \Models\User;
-require_once '../autoloader.php';
 
 //Variables that may be used by the view
 $errors = [];

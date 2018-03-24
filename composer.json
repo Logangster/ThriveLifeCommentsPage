@@ -1,1 +1,10 @@
-{}
+{
+    "name": "lgore/thrive-life-comments-page",
+    "authors": [
+        {
+            "name": "Logan Gore",
+            "email": "rockstar171@gmail.com"
+        }
+    ],
+    "require": {}
+}
