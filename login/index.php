@@ -15,6 +15,7 @@
         <h3>Login</h3>
         <hr />
         <?php include "../shared_components/errors.php" ?>
+        <?php include "../shared_components/flash.php"; ?>
         <form method="post">
             <input name="csrf" type="hidden" value="<?php echo $token ?>" />
             <div class="form-group">

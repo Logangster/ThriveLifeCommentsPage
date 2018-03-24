@@ -12,11 +12,7 @@
 
 <main>
     <div class="container jumbotron">
-        <?php if (isset($_SESSION['flash'])): ?>
-            <div class="alert alert-danger">
-                <?php echo "<p>{$_SESSION['flash']}</p>" ?>
-            </div>
-        <?php endif; ?>
+        <?php include "./shared_components/flash.php"; ?>
         <h3>Welcome to the Comments Page!</h3>
         <p class="lead">Please register or login</p>
     </div>

@@ -21,6 +21,7 @@ class Helper
     {
         if(session_status()!=PHP_SESSION_ACTIVE) session_start();
         if (!isset($_SESSION['username'])) {
+            $_SESSION['flash'] = 'You must be logged in for that.';
             self::redirect("/login");
         }
     }
