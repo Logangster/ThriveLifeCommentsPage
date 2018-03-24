@@ -35,7 +35,7 @@ class Helper
             $username = $url["user"];
             echo $username . PHP_EOL;
             $password = $url["pass"];
-            echo $url . PHP_EOL;
+            echo $password . PHP_EOL;
             $db = substr($url["path"], 1);
             echo $db . PHP_EOL;
         } else {
