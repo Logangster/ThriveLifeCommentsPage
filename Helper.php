@@ -28,6 +28,7 @@ class Helper
     public static function connectToDB()
     {
         if (getenv("CLEARDB_DATABASE_URL")) {
+            echo "CLEAR DB!";
             $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
             $server = $url["host"];
             $username = $url["user"];
