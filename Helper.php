@@ -14,7 +14,7 @@ class Helper
 {
     public static function redirect($relativePath)
     {
-        header('Location: ' .  Config::$baseUrl . $relativePath);
+        header('Location: ' .  Config::baseUrl() . $relativePath);
     }
 
     public static function authenticate()
