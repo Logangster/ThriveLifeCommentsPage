@@ -11,6 +11,11 @@ namespace ThriveLifeCommentsPage;
 class Config
 {
     public static function baseUrl() {
-        return getenv("HEROKU_URL") or 'http://localhost/thrivelifecommentspage'; 
+        $herokuUrl = getenv("HEROKU_URL");
+
+        if ($herokuUrl)
+            return $herokuUrl;
+        else
+            return  'http://localhost/thrivelifecommentspage';
     }
 }
