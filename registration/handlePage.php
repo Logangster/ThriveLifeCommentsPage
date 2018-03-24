@@ -27,6 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
         $errors[] = "Password is required";
     }
 
+    if (User::findByUsername($username) != null) {
+        $errors[] = "Username is not unique";
+    }
+
     //Todo: Add more field validation
 
     if (count($errors) === 0) {

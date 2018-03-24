@@ -56,7 +56,11 @@ class User
             $stmt->fetch();
             $stmt->close();
             $conn->close();
-            return new User($colUsername, $colPassword);
+
+            if ($colUsername != "")
+                return new User($colUsername, $colPassword);
+            else
+                return null;
         } else {
             return null;
         }
