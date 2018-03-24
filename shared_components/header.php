@@ -21,6 +21,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/registration">Register</a>
                     </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comments">Product Comments</a>
+                    </li>
                 <?php endif; ?>
             </ul>
             <?php if (isset($_SESSION['username'])): ?>
