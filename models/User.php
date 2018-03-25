@@ -14,29 +14,26 @@ use ThriveLifeCommentsPage\Helper;
 
 class User
 {
+    public $id;
     public $username;
     public $password;
-    private $conn;
 
     public function __construct($username, $password)
     {
-        $this->conn = Helper::connectToDB();
         $this->username = $username;
         $this->password = $password;
     }
 
-    public function __destruct()
-    {
-        $this->conn->close();
-    }
-
     public function save()
     {
+        $conn = Helper::connectToDB();
         $this->password = Helper::hashPassword($this->password);
-        if ($stmt = $this->conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)")) {
+
+        if ($stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)")) {
             $stmt->bind_param('ss', $this->username, $this->password);
             $stmt->execute();
             $stmt->close();
+            $conn->close();
             return true;
         } else {
             return false;
@@ -45,20 +42,24 @@ class User
 
     public static function findByUsername($username)
     {
+        $colId = 0;
         $colUsername = "";
         $colPassword = "";
         $conn = Helper::connectToDB();
 
-        if ($stmt = $conn->prepare("SELECT username, password FROM users WHERE username = ?")) {
+        if ($stmt = $conn->prepare("SELECT * FROM users WHERE username = ?")) {
             $stmt->bind_param('s', $username);
             $stmt->execute();
-            $stmt->bind_result($colUsername, $colPassword);
+            $stmt->bind_result($colId,$colUsername, $colPassword);
             $stmt->fetch();
             $stmt->close();
             $conn->close();
 
-            if ($colUsername != "")
-                return new User($colUsername, $colPassword);
+            if ($colUsername != "") {
+                $user = new User($colUsername, $colPassword);
+                $user->id = $colId;
+                return $user;
+            }
             else
                 return null;
         } else {

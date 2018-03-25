@@ -1,11 +1,10 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: rocks
+ * User: logan
  * Date: 3/24/2018
  * Time: 12:29 PM
  */
-
 namespace ThriveLifeCommentsPage;
 
 require_once "Config.php";

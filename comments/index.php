@@ -11,15 +11,35 @@
 <?php include "./handlePage.php" ?>
 <main>
     <div class="container jumbotron">
+        <?php include "../shared_components/errors.php" ?>
+        <form method="post">
+            <input name="csrf" type="hidden" value="<?php echo $token ?>" />
+            <div class="form-group">
+                <label for="comment">Leave a Comment</label>
+                <?php include "../shared_components/flash.php" ?>
+                <textarea class="form-control" id="comment" name="comment" placeholder="Enter comment"></textarea>
+                <br/>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container jumbotron">
         <h3>Comments About this Super Awesome Product</h3>
-        <div class="card">
-            <div class="card-header">
-                logangster
+        <hr/>
+        <?php foreach($comments as $comment): ?>
+            <div class="card">
+                <div class="card-header">
+                    <?php echo $comment->username ?>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><?php echo $comment->comment ?></p>
+                </div>
+                <div class="card-footer text-muted">
+                    <?php echo $comment->created_date ?>
+                </div>
             </div>
-            <div class="card-body">
-                <p class="card-text">Worst product I've ever used.</p>
-            </div>
-        </div>
+            <hr />
+        <?php endforeach; ?>
     </div>
 
 </main>

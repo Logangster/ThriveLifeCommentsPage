@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
@@ -7,12 +6,7 @@
         crossorigin="anonymous"></script>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <?php if (isset($_SESSION['username'])) {
-            $homeUrl = "/comments";
-        } else {
-            $homeUrl = "/";
-        } ?>
-        <a class="navbar-brand" href="<?php echo $homeUrl; ?>">Comments Page</a>
+        <a class="navbar-brand" href="/">Comments Page</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,7 +23,7 @@
                 <?php endif; ?>
             </ul>
             <?php if (isset($_SESSION['username'])): ?>
-                <p style="color: white; text-align: center;"><?php echo $_SESSION['username'] ?></p>&nbsp;&nbsp;
+                <p class="navbar-nav pull-right" style="color: white;"><?php echo $_SESSION['username'] ?></p>&nbsp;&nbsp;
                 <form action="/logout">
                     <input class="btn btn-success" type="submit" value="Logout"/>
                 </form>

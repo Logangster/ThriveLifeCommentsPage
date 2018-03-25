@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
                 $errors = ["Invalid username or password"];
             } else {
                 $_SESSION['username'] = $user->username;
+                $_SESSION['userId'] = $user->id;
                 Helper::redirect("/comments");
             }
         }

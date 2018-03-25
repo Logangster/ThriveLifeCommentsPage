@@ -7,8 +7,11 @@
     <title>Comments Page</title>
 </head>
 <body>
-<?php require_once './autoload.php' ?>
 <?php include "./shared_components/header.php" ?>
+<?php
+    require_once "Helper.php";
+    if (isset($_SESSION['username'])) \ThriveLifeCommentsPage\Helper::redirect("/comments");
+?>
 
 <main>
     <div class="container jumbotron">
