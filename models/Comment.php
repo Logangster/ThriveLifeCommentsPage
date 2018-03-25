@@ -5,7 +5,6 @@
  * Date: 3/24/2018
  * Time: 5:36 PM
  */
-
 namespace ThriveLifeCommentsPage\models;
 
 
@@ -56,7 +55,6 @@ class Comment
             $conn->close();
             return $comments;
         } else {
-            echo $conn->error;
             return null;
         }
     }

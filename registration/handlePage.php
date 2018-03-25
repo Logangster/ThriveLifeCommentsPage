@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
         $user = new User($username, $password);
         if ($user->save()) {
             $_SESSION['username'] = $user->username;
+            $_SESSION['userId'] = $user->id;
             Helper::redirect("/comments");
         }
     }

@@ -5,7 +5,6 @@
  * Date: 3/24/2018
  * Time: 11:37 AM
  */
-
 namespace ThriveLifeCommentsPage\Models;
 
 require_once "../Helper.php";
@@ -32,6 +31,7 @@ class User
         if ($stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)")) {
             $stmt->bind_param('ss', $this->username, $this->password);
             $stmt->execute();
+            $this->id = $conn->insert_id;
             $stmt->close();
             $conn->close();
             return true;

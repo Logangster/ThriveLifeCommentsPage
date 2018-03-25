@@ -1,11 +1,12 @@
 <?php
 
-if (isset($_SESSION['flash'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_SESSION['flash'])) {
 
+    $flash = $_SESSION['flash'];
     echo <<<alert
     
     <div class="alert alert-info">
-       <p>{$_SESSION['flash']}</p>
+       <p>{$flash}</p>
     </div>
 
 alert;

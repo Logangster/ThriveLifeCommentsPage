@@ -16,8 +16,9 @@ Helper::authenticate();
 
 $errors = [];
 $comments = Comment::mostRecentComments();
+$token = Helper::setCSRFToken();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
     $comment = $_POST['comment'];
     if (empty($comment)) {
         $errors[] = 'Comment field is required';
@@ -25,10 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (count($errors) === 0) {
         $userId = $_SESSION['userId'];
+        echo $userId;
         $commentObject = new Comment($userId, $comment);
         $commentObject->save();
-        $commentObject->username = $_SESSION['username'];
         $_SESSION['flash'] = 'Comment has been submitted.';
-        array_unshift($comments, $commentObject);
+        Helper::redirect("/comments");
     }
 }
