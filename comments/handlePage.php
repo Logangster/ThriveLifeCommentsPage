@@ -15,6 +15,7 @@ require_once "../models/Comment.php";
 
 Helper::authenticate();
 
+// Variables used by the view
 $errors = [];
 $comments = Comment::mostRecentComments();
 $token = Helper::setCSRFToken();

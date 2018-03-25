@@ -23,11 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
 
     if (empty($username)) {
         $errors[] = "Username is required";
-    } else
+    }
 
-        if (empty($password)) {
-            $errors[] = "Password is required";
-        }
+    if (empty($password)) {
+        $errors[] = "Password is required";
+    }
 
     if (count($errors) === 0) {
         $user = User::findByUsername($username);
