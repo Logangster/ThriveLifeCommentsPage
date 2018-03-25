@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label for="comment">Leave a Comment</label>
                 <?php include "../shared_components/flash.php" ?>
-                <textarea class="form-control" id="comment" name="comment" placeholder="Enter comment"></textarea>
+                <textarea class="form-control col-md-5" rows="4" id="comment" name="comment" placeholder="Enter comment"></textarea>
                 <br/>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

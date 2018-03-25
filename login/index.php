@@ -20,11 +20,11 @@
             <input name="csrf" type="hidden" value="<?php echo $token ?>"/>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+                <input type="text" class="form-control col-md-4" id="username" name="username" maxlength="20" placeholder="Enter username">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                <input type="password" class="form-control col-md-4" id="password" name="password" maxlength="20" placeholder="Password">
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
             <p>Not a user? Register <a href="/registration">here</a></p>
