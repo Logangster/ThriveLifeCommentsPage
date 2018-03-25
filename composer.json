@@ -1,14 +1,14 @@
 {
-    "name": "lgore/thrive-life-comments-page",
-    "authors": [
-        {
-            "name": "Logan Gore",
-            "email": "rockstar171@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-        }
-    },
-    "require": {}
+  "name": "lgore/thrive-life-comments-page",
+  "authors": [
+    {
+      "name": "Logan Gore",
+      "email": "rockstar171@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+    }
+  },
+  "require": {}
 }

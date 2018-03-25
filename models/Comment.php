@@ -5,6 +5,7 @@
  * Date: 3/24/2018
  * Time: 5:36 PM
  */
+
 namespace ThriveLifeCommentsPage\models;
 
 
@@ -45,7 +46,7 @@ class Comment
             $stmt->bind_result($userId, $userName, $comment, $created_date);
 
             $comments = [];
-            while($stmt->fetch()) {
+            while ($stmt->fetch()) {
                 $comment = new Comment($userId, $comment);
                 $comment->created_date = $created_date;
                 $comment->username = $userName;

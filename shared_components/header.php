@@ -23,7 +23,8 @@
                 <?php endif; ?>
             </ul>
             <?php if (isset($_SESSION['username'])): ?>
-                <p class="navbar-nav pull-right" style="color: white;"><?php echo $_SESSION['username'] ?></p>&nbsp;&nbsp;
+                <p class="navbar-nav pull-right"
+                   style="color: white;"><?php echo $_SESSION['username'] ?></p>&nbsp;&nbsp;
                 <form action="/logout">
                     <input class="btn btn-success" type="submit" value="Logout"/>
                 </form>

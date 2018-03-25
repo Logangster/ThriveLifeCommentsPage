@@ -5,6 +5,7 @@
  * Date: 3/24/2018
  * Time: 11:37 AM
  */
+
 namespace ThriveLifeCommentsPage\Models;
 
 require_once "../Helper.php";
@@ -50,7 +51,7 @@ class User
         if ($stmt = $conn->prepare("SELECT * FROM users WHERE username = ?")) {
             $stmt->bind_param('s', $username);
             $stmt->execute();
-            $stmt->bind_result($colId,$colUsername, $colPassword);
+            $stmt->bind_result($colId, $colUsername, $colPassword);
             $stmt->fetch();
             $stmt->close();
             $conn->close();
@@ -59,8 +60,7 @@ class User
                 $user = new User($colUsername, $colPassword);
                 $user->id = $colId;
                 return $user;
-            }
-            else
+            } else
                 return null;
         } else {
             return null;

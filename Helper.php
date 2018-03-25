@@ -5,6 +5,7 @@
  * Date: 3/24/2018
  * Time: 12:29 PM
  */
+
 namespace ThriveLifeCommentsPage;
 
 require_once "Config.php";
@@ -13,12 +14,12 @@ class Helper
 {
     public static function redirect($relativePath)
     {
-        header('Location: ' .  Config::getBaseUrl() . $relativePath);
+        header('Location: ' . Config::getBaseUrl() . $relativePath);
     }
 
     public static function authenticate()
     {
-        if(session_status()!=PHP_SESSION_ACTIVE) session_start();
+        if (session_status() != PHP_SESSION_ACTIVE) session_start();
         if (!isset($_SESSION['username'])) {
             $_SESSION['flash'] = 'You must be logged in for that.';
             self::redirect("/login");
@@ -49,7 +50,7 @@ class Helper
 
     public static function setCSRFToken()
     {
-        if(session_status()!= PHP_SESSION_ACTIVE) session_start();
+        if (session_status() != PHP_SESSION_ACTIVE) session_start();
         if (!isset($_SESSION['token'])) {
             $token = md5(uniqid(rand(), TRUE));
             $_SESSION['token'] = $token;

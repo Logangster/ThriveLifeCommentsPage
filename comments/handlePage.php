@@ -5,6 +5,7 @@
  * Date: 3/24/2018
  * Time: 11:06 AM
  */
+
 namespace ThriveLifeCommentsPage;
 
 use ThriveLifeCommentsPage\models\Comment;
@@ -20,6 +21,7 @@ $token = Helper::setCSRFToken();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $token == $_POST['csrf']) {
     $comment = $_POST['comment'];
+
     if (empty($comment)) {
         $errors[] = 'Comment field is required';
     }

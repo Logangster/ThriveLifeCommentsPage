@@ -13,7 +13,7 @@
     <div class="container jumbotron">
         <?php include "../shared_components/errors.php" ?>
         <form method="post">
-            <input name="csrf" type="hidden" value="<?php echo $token ?>" />
+            <input name="csrf" type="hidden" value="<?php echo $token ?>"/>
             <div class="form-group">
                 <label for="comment">Leave a Comment</label>
                 <?php include "../shared_components/flash.php" ?>
@@ -26,7 +26,7 @@
     <div class="container jumbotron">
         <h3>Comments About this Super Awesome Product</h3>
         <hr/>
-        <?php foreach($comments as $comment): ?>
+        <?php foreach ($comments as $comment): ?>
             <div class="card">
                 <div class="card-header">
                     <?php echo $comment->username ?>
@@ -38,7 +38,7 @@
                     <?php echo $comment->created_date ?>
                 </div>
             </div>
-            <hr />
+            <hr/>
         <?php endforeach; ?>
     </div>
 

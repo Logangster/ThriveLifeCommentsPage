@@ -13,11 +13,11 @@
 <main>
     <div class="container jumbotron">
         <h3>Login</h3>
-        <hr />
+        <hr/>
         <?php include "../shared_components/errors.php" ?>
         <?php include "../shared_components/flash.php"; ?>
         <form method="post">
-            <input name="csrf" type="hidden" value="<?php echo $token ?>" />
+            <input name="csrf" type="hidden" value="<?php echo $token ?>"/>
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">

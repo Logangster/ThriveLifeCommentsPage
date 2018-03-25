@@ -5,6 +5,7 @@
  * Date: 3/24/2018
  * Time: 11:06 AM
  */
+
 namespace ThriveLifeCommentsPage;
 
 require_once "../models/User.php";
