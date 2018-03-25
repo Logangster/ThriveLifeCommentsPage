@@ -14,9 +14,7 @@
 <body>
 <?php include "../shared_components/header.php" ?>
 <main>
-    <?php require_once '../autoload.php' ?>
     <?php require "./handlePage.php" ?>
-
 
     <div class="container jumbotron">
         <h3>Registration</h3>
